@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+.everything{
+    /*border: 2px solid red;*/
+    display: flex;
+    margin: 50px;
+}
+.left-sidebar{
+    /*border: 2px solid red;*/
+    margin-right: 5%;
+}
+
+#content{
+    /*border: 2px solid red;*/
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}
