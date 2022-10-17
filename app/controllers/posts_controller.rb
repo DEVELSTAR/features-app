@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 	def show
@@ -33,6 +34,6 @@ class PostsController < ApplicationController
     end
 
 	def post_params
-		params.require(:post).permit(:title)
+		params.require(:post).permit(:title, :user_id)
 	end
 end

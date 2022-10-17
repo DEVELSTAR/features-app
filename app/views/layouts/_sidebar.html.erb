@@ -1,4 +1,9 @@
 <div class="left-sidebar">
-	<div><%= link_to "home", root_path  %></div>
-	<div><%=link_to "create", new_post_path %></div>
+	<div>
+		<% if user_signed_in? %>
+			<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :"delete"} %>
+		<% end %>
+	</div>
+	<div><%= link_to "Home", root_path  %></div>
+	<div><%=link_to "Create", new_post_path %></div>
 </div>

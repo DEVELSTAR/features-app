@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
   <div class="card mb-4">
-    <%=link_to post.title, post_path(post) %>
+    <%= post.user.name %>
+    <div>Title: <%=link_to post.title, post_path(post) %></div>
     <div>
       <%=link_to "D", post, data: {turbo_method: :delete, turbo_confirm: "delete it !"}  %>
       <%=link_to "E", edit_post_path(post) %>
