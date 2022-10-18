@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
-    before_action :authenticate_user!
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-	def show
-	end
+  	def show
+  	end
 
     def new
     	@post = Post.new
@@ -27,13 +26,13 @@ class PostsController < ApplicationController
 		redirect_to root_path
     end
 
-	private
+  	private
 
     def set_post
       @post = Post.find(params[:id])
     end
 
-	def post_params
-		params.require(:post).permit(:title, :user_id)
-	end
+  	def post_params
+  		params.require(:post).permit(:title, :user_id)
+  	end
 end
